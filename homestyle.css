@@ -1,0 +1,226 @@
+html {
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+}
+body {
+    background-image: url(images/trybg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    margin-top: 150px;
+}
+.rectangle > * {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.7));
+    width: 90vw;
+    height: 500px;
+    margin: auto;
+    border-radius: 70px;
+    border: 5px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Spacing between grid items */
+    align-items: center;
+    position: relative;
+}
+
+.image-wrapper {
+    width: 50%;
+    position: absolute;
+    left: 0; /* Adjust to desired position */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+}
+
+.text-wrapper {
+    grid-column: 2; /* Places text in the second column */
+    padding: 20px;
+    color: white;
+}
+
+img {
+    width: 100%; /* Ensures image scales */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .image {
+    height: 720px;
+    transition: transform 0.3s ease-in-out;
+} */
+.image:hover {
+    transform: scale(1.1);
+}
+.title {
+    text-shadow: -1px 2px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+.title:hover {
+    transform: scale(1.1);
+}
+.description {
+    font-size: 18px;
+    text-align: justify;
+}
+.title,
+.description {
+    color: #fff6da;
+}
+p,
+.button {
+    font-family: twilight;
+}
+h1 {
+    font-family: twinight;
+    font-size: 5rem;
+    line-height: 0%;
+}
+.button {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+}
+.button::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/* glow */
+.button::before {
+    content: "";
+    background: linear-gradient(45deg, #eeeeee, #e5e5e5, #dddddd, #d4d4d4, #cbcbcb, #c3c3c3, #bababa, #b2b2b2);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+/* hover */
+.button:hover::before {
+    opacity: 1;
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:active {
+    color: #000;
+    font-weight: bold;
+}
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+@font-face {
+    font-family: twilight;
+    src: url(fonts/Poppins-Light.ttf);
+}
+@font-face {
+    font-family: twinight;
+    src: url(fonts/BLKCHCRY.TTF);
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .rectangle > * {
+        width: 80%;
+        height: 300%;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .image {
+        width: 50%;
+        height: 50%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 767px) {
+    .rectangle > * {
+        width: 80%;
+        height: 300%;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .image {
+        width: 50%;
+        height: 50%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 600px) {
+    body {
+        margin: 0;
+    }
+    .rectangle > * {
+        padding: 0;
+    }
+    .container {
+        grid-template-columns: 1fr; /* Switch to a single column layout */
+        gap: 0;
+    }
+
+    .image-wrapper {
+        position: static; /* Remove absolute positioning for better stacking */
+        transform: none; /* Reset transform */
+        margin: 0 auto; /* Center the image */
+        text-align: center;
+    }
+
+    .text-wrapper {
+        grid-column: 1; /* Ensure text spans the single column */
+        text-align: center; /* Optional: center-align text */
+    }
+
+    .image {
+        width: 70%; /* Adjust image size to fit the container */
+        height: auto;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .description {
+        font-size: 14px;
+        text-align: justify;
+    }
+    .button {
+        padding: 5px 20px;
+        font-size: x-small;
+    }
+}

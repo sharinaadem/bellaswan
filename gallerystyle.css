@@ -1,0 +1,233 @@
+body {
+    background-image: url(images/trybg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Align navigation to the right */
+    padding: 1rem;
+    align-items: center;
+    margin: 2rem 5rem -3rem;
+}
+.navbar {
+    display: grid;
+    justify-items: end; /* Align the navigation to the right */
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column; /* Arrange list items in a row */
+    gap: 1rem; /* Optional: Add spacing between navigation items */
+}
+h2,
+p,
+.button {
+    font-family: twilight;
+}
+.button-home,
+.button-about {
+    color: #fff6da;
+}
+.button-home,
+.button-about,
+.button-gallery {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: twilight;
+    font-size: larger;
+    height: 50px;
+    width: 100px;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+.button-home:hover,
+.button-gallery:hover,
+.button-about:hover {
+    transform: scale(1.1);
+}
+.button-home {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.button-gallery {
+    background-color: #fff6da;
+}
+.button-about {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+.button-home:active,
+.button-about:active {
+    background-color: #fff6da;
+    color: black;
+}
+.button-gallery:active {
+    background-color: black;
+    color: #fff6da;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+main {
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    font-family: twinight;
+    color: #e3d6b0;
+    margin-bottom: 50px;
+    font-size: 50px;
+    text-shadow: -1px 2px 8px rgba(0, 0, 0, 0.8);
+}
+h2 {
+    text-align: center;
+}
+p {
+    text-align: justify;
+}
+.gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.gallery-grid-item {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.card {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Image and content areas */
+    grid-template-areas:
+        "image"
+        "content";
+    background: rgba(235, 229, 217, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card_img {
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    object-fit: cover;
+}
+
+.card_content {
+    padding: 1rem;
+    text-align: left;
+}
+
+.card_content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: black;
+}
+
+.card_content p {
+    font-size: 0.9rem;
+    color: black;
+}
+.card,
+.saga {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover,
+.saga:hover {
+    transform: scale(1.1);
+}
+footer {
+    margin-bottom: 20px;
+    color: #fff6da;
+    font-family: twilight;
+}
+.footer {
+    text-align: center;
+}
+@font-face {
+    font-family: twilight;
+    src: url(fonts/Poppins-Light.ttf);
+}
+@font-face {
+    font-family: twinight;
+    src: url(fonts/BLKCHCRY.TTF);
+}
+@media (max-width: 768px) {
+    body {
+        margin-top: 40px;
+    }
+    header {
+        margin: 0 auto 1rem;
+        padding: 0.5rem;
+    }
+    .navbar {
+        justify-items: center; /* Center the navbar */
+    }
+    .button-home,
+    .button-about,
+    .button-gallery {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .gallery-grid {
+        padding: 1rem;
+    }
+
+    .card_img {
+        aspect-ratio: 1 / 1.25;
+    }
+}
+@media (max-width: 480px) {
+    body {
+        margin-top: 35px;
+    }
+    header {
+        grid-template-columns: 1fr; /* Stack items in small screens */
+        margin: 0;
+        padding: -5rem;
+    }
+
+    .button-home,
+    .button-about,
+    .button-gallery {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+    .navbar {
+        justify-items: center; /* Center the navbar */
+    }
+
+    .nav-list {
+        grid-auto-flow: column; /* Stack items vertically in a column */
+        justify-items: center; /* Center the list items */
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .gallery-grid-item {
+        grid-template-columns: 1fr;
+    }
+}
