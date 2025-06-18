@@ -1,7 +1,9 @@
-html {
+html, body {
     margin: 0;
+    padding: 0;
     height: 100%;
-    overflow: auto;
+    min-height: 100%;
+    box-sizing: border-box;
 }
 body {
     background-image: url(images/trybg.jpg);
@@ -9,83 +11,124 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0;
+    min-height: 100vh;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem 0 2rem;
+    box-sizing: border-box;
+}
+.navbar .nav-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
     padding: 0;
-    margin-top: 150px;
+    margin: 0;
 }
-.rectangle > * {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.7));
-    width: 90vw;
-    height: 500px;
-    margin: auto;
-    border-radius: 70px;
-    border: 5px;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-}
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 20px; /* Spacing between grid items */
-    align-items: center;
-    position: relative;
-}
-
-.image-wrapper {
-    width: 50%;
-    position: absolute;
-    left: 0; /* Adjust to desired position */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-
-}
-
-.text-wrapper {
-    grid-column: 2; /* Places text in the second column */
-    padding: 20px;
-    color: white;
-}
-
-img {
-    width: 100%; /* Ensures image scales */
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* .image {
-    height: 720px;
-    transition: transform 0.3s ease-in-out;
-} */
-.image:hover {
-    transform: scale(1.1);
-}
-.title {
-    text-shadow: -1px 2px 8px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out;
-}
-.title:hover {
-    transform: scale(1.1);
-}
-.description {
-    font-size: 18px;
-    text-align: justify;
-}
-.title,
-.description {
+.button-home, .button-about, .button-gallery {
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: twilight;
+    font-size: 1.1rem;
+    min-height: 44px;
+    min-width: 90px;
+    border: none;
+    padding: 0.5em 1.2em;
+    background-color: rgba(0, 0, 0, 0.65);
     color: #fff6da;
 }
-p,
-.button {
+.button-about {
+    background-color: #fff6da;
+    color: black;
+}
+.button-gallery {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff6da;
+}
+.button-home:hover,
+.button-about:hover,
+.button-gallery:hover {
+    transform: scale(1.07);
+}
+.button-home:active,
+.button-gallery:active {
+    background-color: #fff6da;
+    color: black;
+}
+.button-about:active {
+    background-color: black;
+    color: #fff6da;
+}
+.rectangle {
+    margin: 2.5rem auto 2.5rem auto;
+    border-radius: 2.5rem;
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    padding: 0;
+    width: 92vw;
+    background: transparent;
+    position: relative;
+}
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 380px;
+}
+.image-overlap-wrapper {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 340px;
+    max-width: 47vw;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.overlap-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1.6rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #222;
+}
+.card-content {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(128, 128, 128, 0.7));
+    border-radius: 2.5rem;
+    box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.32);
+    padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+    margin-left: 240px;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 380px;
+}
+.title {
+    font-family: twinight;
+    font-size: 2.8rem;
+    margin: 0 0 1rem 0;
+    color: #fff6da;
+    text-shadow: -1px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+}
+.description {
+    font-size: 1.15rem;
+    color: #fff6da;
+    text-align: justify;
+    margin-bottom: 1.8rem;
     font-family: twilight;
 }
-h1 {
-    font-family: twinight;
-    font-size: 5rem;
-    line-height: 0%;
-}
 .button {
-    padding: 15px 40px;
+    padding: 13px 38px;
     border: none;
     outline: none;
     color: #fff;
@@ -93,58 +136,20 @@ h1 {
     position: relative;
     z-index: 0;
     border-radius: 12px;
-}
-.button::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    font-family: twilight;
     background-color: #333;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+    font-size: 1rem;
+    align-self: flex-start;
 }
-/* glow */
-.button::before {
-    content: "";
-    background: linear-gradient(45deg, #eeeeee, #e5e5e5, #dddddd, #d4d4d4, #cbcbcb, #c3c3c3, #bababa, #b2b2b2);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 600%;
-    z-index: -1;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    filter: blur(8px);
-    animation: glowing 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-    opacity: 0;
-}
-/* hover */
-.button:hover::before {
-    opacity: 1;
-}
-
-.button:active:after {
-    background: transparent;
-}
-
 .button:active {
     color: #000;
     font-weight: bold;
 }
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+footer {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    color: #fff6da;
+    font-family: twilight;
 }
 @font-face {
     font-family: twilight;
@@ -154,71 +159,90 @@ h1 {
     font-family: twinight;
     src: url(fonts/BLKCHCRY.TTF);
 }
-@media (min-width: 768px) and (max-width: 979px) {
-    .rectangle > * {
-        width: 80%;
-        height: 300%;
+/* Tablet */
+@media (max-width: 950px) {
+    .rectangle {
+        max-width: 99vw;
+        width: 99vw;
     }
-    .title {
-        font-size: 3rem;
+    .hero-content {
+        min-height: 320px;
     }
-    .image {
-        width: 50%;
-        height: 50%;
-        margin-left: 0;
-        margin-top: 50px;
+    .image-overlap-wrapper {
+        width: 32vw;
+        min-width: 100px;
+        left: -16px;
     }
-}
-@media (max-width: 767px) {
-    .rectangle > * {
-        width: 80%;
-        height: 300%;
+    .card-content {
+        padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+        margin-left: 135px;
+        min-height: 320px;
     }
     .title {
         font-size: 2rem;
     }
-    .image {
-        width: 50%;
-        height: 50%;
-        margin-left: 0;
-        margin-top: 50px;
-    }
 }
+/* Mobile */
 @media (max-width: 600px) {
-    body {
-        margin: 0;
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0.5rem 0 0.5rem;
     }
-    .rectangle > * {
+    .navbar .nav-list {
+        flex-direction: row;
+        gap: 0.4rem;
+    }
+    .rectangle {
+        border-radius: 1.2rem;
+        margin: 1.7rem auto 1rem auto;
+        width: 99vw;
+        min-width: 0;
+        box-shadow: 0px 5px 12px rgba(0,0,0,0.12);
         padding: 0;
     }
-    .container {
-        grid-template-columns: 1fr; /* Single column */
-        gap: 0;
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        min-height: unset;
+        position: relative;
     }
-    .image-wrapper {
+    .image-overlap-wrapper {
         position: static;
         transform: none;
-        margin: 0 auto;
-        text-align: center;
-        width: 100%;
-        max-width: none;
+        width: 75vw;
+        max-width: 240px;
+        min-width: 0;
+        margin: -60px auto 0 auto;
+        z-index: 2;
+        justify-content: center;
     }
-    .image {
-        width: 160px; /* Make image much bigger */
-        max-width: 90vw;
-        height: auto;
-        display: block;
-        margin: 20px auto 0 auto;
+    .overlap-image {
+        border-radius: 1.2rem;
+    }
+    .card-content {
+        margin-left: 0;
+        margin-top: -50px;
+        min-height: unset;
+        width: 95vw;
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.7rem 0.7rem;
+        border-radius: 1.2rem;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.10);
+        align-items: center;
+        text-align: center;
     }
     .title {
-        font-size: 2rem;
+        font-size: 1.4rem;
+        text-align: center;
     }
     .description {
-        font-size: 14px;
+        font-size: 0.99rem;
         text-align: justify;
     }
     .button {
-        padding: 5px 20px;
-        font-size: x-small;
+        padding: 8px 22px;
+        font-size: 0.95rem;
+        align-self: center;
     }
 }
