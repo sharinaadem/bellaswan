@@ -192,25 +192,23 @@ h1 {
         padding: 0;
     }
     .container {
-        grid-template-columns: 1fr; /* Switch to a single column layout */
+        grid-template-columns: 1fr; /* Single column */
         gap: 0;
     }
-
     .image-wrapper {
-        position: static; /* Remove absolute positioning for better stacking */
-        transform: none; /* Reset transform */
-        margin: 0 auto; /* Center the image */
+        position: static;
+        transform: none;
+        margin: 0 auto;
         text-align: center;
+        width: 100%;
+        max-width: none;
     }
-
-    .text-wrapper {
-        grid-column: 1; /* Ensure text spans the single column */
-        text-align: center; /* Optional: center-align text */
-    }
-
     .image {
-        width: 70%; /* Adjust image size to fit the container */
+        width: 160px; /* Make image much bigger */
+        max-width: 90vw;
         height: auto;
+        display: block;
+        margin: 20px auto 0 auto;
     }
     .title {
         font-size: 2rem;
