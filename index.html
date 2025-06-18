@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="homestyle.css" />
-        <title>Bella Swan</title>
-    </head>
-    <body>
-        <main>
-            <div class="rectangle">
-                <div class="container">
-                    <div class="image-wrapper">
-                        <img src="images/bella.png" alt="Bella Swan" class="image" />
-                    </div>
-                    <div class="text-wrapper grid">
-                        <h1 class="title">Bella Swan</h1>
-                        <p class="description">
-                            Bella Swan is the main protagonist of The Twilight Saga, a series of novels by Stephenie Meyer. She is a human girl who moves to the small town of Forks, Washington, where she falls in love with Edward Cullen, a
-                            vampire. Bella is known for her introverted personality, clumsiness, and willingness to embrace the supernatural world. Over the course of the series, her relationships with Edward, Jacob Black (a werewolf), and
-                            others drive the story's romantic and dramatic conflicts.
-                        </p>
-                        <a href="about.html"><button class="button">Read More</button></a>
-                    </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="homestyle.css"/>
+    <title>Bella Swan</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <a href="index.html" class="home"><button class="button-home">Home</button></a>
+                <a href="gallery.html" class="gallery"><button class="button-gallery">Gallery</button></a>
+                <a href="about.html" class="about"><button class="button-about">About</button></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="rectangle">
+            <!-- Overlap image absolutely on desktop, static on mobile -->
+            <div class="hero-content">
+                <div class="image-overlap-wrapper">
+                    <img src="images/bella.jpg" alt="Bella Swan" class="overlap-image"/>
+                </div>
+                <div class="card-content">
+                    <h1 class="title">Bella Swan</h1>
+                    <p class="description">
+                        Bella Swan is the main protagonist of The Twilight Saga, a series of novels by Stephenie Meyer. She is a human girl who moves to the small town of Forks, Washington, where she falls in love with Edward Cullen, a vampire. Bella is known for her introverted personality, clumsiness, and willingness to embrace the supernatural world. Over the course of the series, her relationships with Edward, Jacob Black (a werewolf), and others drive the story’s romantic and dramatic conflicts.
+                    </p>
+                    <button class="button">Read More</button>
                 </div>
             </div>
-        </main>
-    </body>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;Bella Swan. Designed by: Sharina Adem</p>
+    </footer>
+</body>
 </html>
